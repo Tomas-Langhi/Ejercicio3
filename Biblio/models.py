@@ -14,6 +14,7 @@ class Material(models.Model):
 
 class Libro(Material):
     editorial = models.CharField(max_length=50, default="")
+    portada = models.ImageField(null = True)
 
 class Revista(Material):
     numero = models.IntegerField(null = True)

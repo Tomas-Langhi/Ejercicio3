@@ -1,20 +1,26 @@
 from django.db import models
 
 # Create your models here.
+
+estadoLibro = [
+    ('IN', 'En biblioteca'),
+    ('BW', 'Prestado'),
+    ('RQ', 'Pedido'),
+    ('RV', 'Reservado'),
+]
+
 class Material(models.Model):
     autor = models.CharField(max_length=50, default="")
     titulo = models.CharField(max_length=50, default="")
     anio = models.IntegerField(null = True)
-    status = models.BooleanField(null = True)
+    status = models.CharField(max_length=2, choices=estadoLibro, default='En biblioteca')
 
     def __str__(self):
         return str(self.titulo)
     
-    status.boolean = True
 
 class Libro(Material):
     editorial = models.CharField(max_length=50, default="")
-    portada = models.ImageField(null = True)
 
 class Revista(Material):
     numero = models.IntegerField(null = True)

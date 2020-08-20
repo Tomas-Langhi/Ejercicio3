@@ -25,7 +25,7 @@ SECRET_KEY = 'o-v(f1*rzr!kym(pg^lu*+_n_xhig(sg^jdazr8pp2@@&o2cw!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,4 +121,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/Static/'
+STATIC_ROOT = os.path.join(BASE_DIR , 'Static')
+
+MEDIA_URL = '/Media/'
+MEDIA_ROOT = BASE_DIR + '/Media/'
+
+
+# Django Suit configuration example
+SUIT_CONFIG = {
+    # header
+     'ADMIN_NAME': 'Biblioteca 6toC - 2020',
+     'HEADER_DATE_FORMAT': 'l, j. F Y',
+}

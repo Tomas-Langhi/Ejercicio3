@@ -23,7 +23,7 @@ class LibroAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Libro',{
-            'fields': ('titulo','status', 'editorial','anio','portada',)
+            'fields': ('titulo','status', 'editorial','anio')
         }),
         ('Autor',{
             'fields': ('autor',)

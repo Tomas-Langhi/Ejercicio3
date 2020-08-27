@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">  
-        <title>Titulo</title>
-    </head>
-    <body>
-        <h1>HOLA BUENOS DIAS BREODER</h1>
-        <h3>6 AÑO C 2020</h3>
-    </body>
-</html>
+{% extends "admin/base_site.html" %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div>
+    <h1>BIENVENIDOS A LA BIBLIOTECA!!</h1>
+</div>
+
+<div style="color: red;">
+    <h3>6° C - 2020</h3>
+</div>
+<div>
+{# puedo usar una estructura de control  #}
+
+       {% if request.user.is_authenticated %}Bienvenido, {{ user.username }}.  {# puedo usar una variable #}
+       {% else %}
+           Usuario no autentificado
+       {% endif %}
+ </div>
+<div  style="margin-top: 1rem !important;">
+    <a href="/admin">Ver admin</a>
+</div>
+
+{% endblock %}
